@@ -1,0 +1,404 @@
+{
+  "order": {
+    "number": "101728541",
+    "type": "card",
+    "order_status": "open",
+    "payment_status": "paid",
+    "fulfillment_status": "unfulfilled",
+    "currency": "usd",
+    "notes": null,
+    "cancel_url": null,
+    "return_url": null,
+    "shipping_method": "usps_standard_domestic",
+    "deposit": 0,
+    "discount": 0,
+    "balance": 0,
+    "taxable": 18000,
+    "subtotal": 18000,
+    "total": 19904,
+    "paid": 19904,
+    "refunded": 0,
+    "adjustment": 0,
+    "shipping": 329,
+    "taxes": 1575,
+    "linetotal": 18000,
+    "fee": 399,
+    "credits": 0,
+    "seller": {
+        "_id": "524ba2576f9dea020000000f"
+    },
+    "buyer": {
+        "email": "gregory.rota@gmail.com",
+        "first_name": "Gregory",
+        "last_name": "Rota",
+        "phone": "0033676847591",
+        "name": "Gregory Rota",
+        "company": null,
+        "notes": null
+    },
+    "shipping_address": {
+        "first_name": "Gregory",
+        "last_name": "Rota",
+        "company": "Numberly",
+        "line1": "651 lowell avenue",
+        "line2": null,
+        "city": "Palo Alto",
+        "state": "ca",
+        "zip": "94301",
+        "country": "us",
+        "phone": "0033676847591",
+        "name": "Gregory Rota"
+    },
+    "billing_address": {
+        "first_name": "Gregory",
+        "last_name": "Rota",
+        "company": null,
+        "line1": "651 lowell avenue",
+        "line2": null,
+        "city": "Palo Alto",
+        "state": "ca",
+        "zip": "94301",
+        "country": "us",
+        "phone": "0033676847591",
+        "name": "Gregory Rota"
+    },
+    "fulfillment": {
+        "courier": null,
+        "number": null,
+        "created": null,
+        "created_date": null,
+        "serial_numbers": []
+    },
+    "payment_source": {
+        "card": {
+            "name": "Gregory Rota",
+            "exp_month": 6,
+            "exp_year": 2016,
+            "celery_token": "a44210b69559057a26b54fe4cfc30d654408a7a57efbd5721bb719375e5aadbbb29f0824009aa175db5aea71c17011b78c162d4008057d0e8b1f68b2042f1dedfe04d3584ba09bbb660922346fd06fb7e69b50362e95cc05ea211047f7f1f0d0",
+            "last4": "3333",
+            "type": "visa",
+            "country": "fr",
+            "cvc_check": "pass",
+            "zip_check": null,
+            "zip": null
+        },
+        "failed": false,
+        "paypal": {
+            "email": null,
+            "seller_email": null,
+            "preapproval_key": null,
+            "pay_key": null,
+            "redirect_url": null,
+            "ipn": null,
+            "ending": null,
+            "ending_date": null
+        },
+        "affirm": {
+            "checkout_token": null,
+            "charge_id": null
+        },
+        "airbrite": {
+            "customer_token": null,
+            "card_token": null,
+            "fingerprint": null,
+            "name": null,
+            "exp_month": 1,
+            "exp_year": 1970,
+            "last4": null,
+            "country": null,
+            "type": null
+        },
+        "stripe": {
+            "customer_token": null,
+            "name": null,
+            "exp_month": 1,
+            "exp_year": 1970,
+            "last4": null,
+            "country": null,
+            "type": null
+        }
+    },
+    "fees": {
+        "percentage": 0.02,
+        "plan": null
+    },
+    "client_details": {
+        "ip": "104.236.107.95",
+        "user_agent": null,
+        "accept_language": null,
+        "referer": null
+    },
+    "charge_balance": {},
+    "charge_deposit": {},
+    "discount_codes": [],
+    "line_items": [
+        {
+            "product_id": "5475082e8c583405001cdb59",
+            "quantity": 1,
+            "id": "2fe039a6-0f91-4c2f-a9e0-1f944e54d1ca",
+            "image": null,
+            "product_name": "Beginner Pack",
+            "celery_sku": "5475082e8c583405001cdb59",
+            "enable_taxes": true,
+            "variant_id": null,
+            "variant_name": null,
+            "price": 17000,
+            "sku": "BEGINNER-PACK",
+            "weight": 0.7
+        },
+        {
+            "product_id": "531743cc7759f00400271ced",
+            "quantity": 1,
+            "id": "9d060996-a878-4739-b0cc-b38e25b11ef8",
+            "image": null,
+            "product_name": "Servo",
+            "celery_sku": "531743cc7759f00400271ced",
+            "enable_taxes": true,
+            "variant_id": null,
+            "variant_name": null,
+            "price": 1000,
+            "sku": "SERVO_MOTOR_00",
+            "weight": 0.12
+        }
+    ],
+    "adjustments": [],
+    "discounts": [],
+    "payments": [
+        {
+            "id": "60a3c0d2-5f34-44d7-bb08-6911075cd9bb",
+            "gateway": "stripe",
+            "charge_id": "ch_15Wuxn2951dKKfTtSTivGCXj",
+            "balance_transaction": "txn_15Wuxp2951dKKfTttzi4Kdzp",
+            "amount": 19904,
+            "currency": "usd",
+            "paid": true,
+            "captured": true,
+            "refunded": false,
+            "amount_refunded": 0,
+            "created": 1424116527000,
+            "created_date": "2015-02-16T19:55:27.000Z",
+            "card": []
+        }
+    ],
+    "fulfillments": [],
+    "history": [
+        {
+            "type": "order.created",
+            "body": "Order created.",
+            "data": {},
+            "created": 1424115664515,
+            "created_date": "2015-02-16T19:41:04.515Z"
+        },
+        {
+            "type": "order.charge.succeeded",
+            "body": "Payment charged.",
+            "data": {},
+            "created": 1424116529420,
+            "created_date": "2015-02-16T19:55:29.420Z"
+        }
+    ],
+    "_id": "54e247d0bad8080500a8cc9b",
+    "user_id": "524ba2576f9dea020000000f",
+    "version": "v2",
+    "created": 1424115661944,
+    "updated": 1424116529405,
+    "created_date": "2015-02-16T19:41:01.944Z",
+    "updated_date": "2015-02-16T19:55:29.405Z",
+    "locked": false,
+    "metadata": {}
+},
+"preorder": {
+    "number": "101728541",
+    "type": "card",
+    "order_status": "open",
+    "payment_status": "paid",
+    "fulfillment_status": "unfulfilled",
+    "currency": "usd",
+    "notes": null,
+    "cancel_url": null,
+    "return_url": null,
+    "shipping_method": "usps_standard_domestic",
+    "deposit": 0,
+    "discount": 0,
+    "balance": 0,
+    "taxable": 18000,
+    "subtotal": 18000,
+    "total": 19904,
+    "paid": 19904,
+    "refunded": 0,
+    "adjustment": 0,
+    "shipping": 329,
+    "taxes": 1575,
+    "linetotal": 18000,
+    "fee": 399,
+    "credits": 0,
+    "seller": {
+        "_id": "524ba2576f9dea020000000f"
+    },
+    "buyer": {
+        "email": "gregory.rota@gmail.com",
+        "first_name": "Gregory",
+        "last_name": "Rota",
+        "phone": "0033676847591",
+        "name": "Gregory Rota",
+        "company": null,
+        "notes": null
+    },
+    "shipping_address": {
+        "first_name": "Gregory",
+        "last_name": "Rota",
+        "company": "Numberly",
+        "line1": "651 lowell avenue",
+        "line2": null,
+        "city": "Palo Alto",
+        "state": "ca",
+        "zip": "94301",
+        "country": "us",
+        "phone": "0033676847591",
+        "name": "Gregory Rota"
+    },
+    "billing_address": {
+        "first_name": "Gregory",
+        "last_name": "Rota",
+        "company": null,
+        "line1": "651 lowell avenue",
+        "line2": null,
+        "city": "Palo Alto",
+        "state": "ca",
+        "zip": "94301",
+        "country": "us",
+        "phone": "0033676847591",
+        "name": "Gregory Rota"
+    },
+    "fulfillment": {
+        "courier": null,
+        "number": null,
+        "created": null,
+        "created_date": null,
+        "serial_numbers": []
+    },
+    "payment_source": {
+        "card": {
+            "name": "Gregory Rota",
+            "exp_month": 6,
+            "exp_year": 2016,
+            "celery_token": "a44210b69559057a26b54fe4cfc30d654408a7a57efbd5721bb719375e5aadbbb29f0824009aa175db5aea71c17011b78c162d4008057d0e8b1f68b2042f1dedfe04d3584ba09bbb660922346fd06fb7e69b50362e95cc05ea211047f7f1f0d0",
+            "last4": "3333",
+            "type": "visa",
+            "country": "fr",
+            "cvc_check": "pass",
+            "zip_check": null,
+            "zip": null
+        },
+        "failed": false,
+        "paypal": {
+            "email": null,
+            "seller_email": null,
+            "preapproval_key": null,
+            "pay_key": null,
+            "redirect_url": null,
+            "ipn": null,
+            "ending": null,
+            "ending_date": null
+        },
+        "affirm": {
+            "checkout_token": null,
+            "charge_id": null
+        },
+        "airbrite": {
+            "customer_token": null,
+            "card_token": null,
+            "fingerprint": null,
+            "name": null,
+            "exp_month": 1,
+            "exp_year": 1970,
+            "last4": null,
+            "country": null,
+            "type": null
+        },
+        "stripe": {
+            "customer_token": null,
+            "name": null,
+            "exp_month": 1,
+            "exp_year": 1970,
+            "last4": null,
+            "country": null,
+            "type": null
+        }
+    },
+    "fees": {
+        "percentage": 0.02,
+        "plan": null
+    },
+    "client_details": {
+        "ip": "104.236.107.95",
+        "user_agent": null,
+        "accept_language": null,
+        "referer": null
+    },
+    "charge_balance": {},
+    "charge_deposit": {},
+    "discount_codes": [],
+    "line_items": [
+        {
+            "product_id": "5475082e8c583405001cdb59",
+            "quantity": 1,
+            "id": "2fe039a6-0f91-4c2f-a9e0-1f944e54d1ca",
+            "image": null,
+            "product_name": "Beginner Pack",
+            "celery_sku": "5475082e8c583405001cdb59",
+            "enable_taxes": true,
+            "variant_id": null,
+            "variant_name": null,
+            "price": 17000,
+            "sku": "TM-T2-02",
+            "weight": 0.7
+        }
+    ],
+    "adjustments": [],
+    "discounts": [],
+    "payments": [
+        {
+            "id": "60a3c0d2-5f34-44d7-bb08-6911075cd9bb",
+            "gateway": "stripe",
+            "charge_id": "ch_15Wuxn2951dKKfTtSTivGCXj",
+            "balance_transaction": "txn_15Wuxp2951dKKfTttzi4Kdzp",
+            "amount": 19904,
+            "currency": "usd",
+            "paid": true,
+            "captured": true,
+            "refunded": false,
+            "amount_refunded": 0,
+            "created": 1424116527000,
+            "created_date": "2015-02-16T19:55:27.000Z",
+            "card": []
+        }
+    ],
+    "fulfillments": [],
+    "history": [
+        {
+            "type": "order.created",
+            "body": "Order created.",
+            "data": {},
+            "created": 1424115664515,
+            "created_date": "2015-02-16T19:41:04.515Z"
+        },
+        {
+            "type": "order.charge.succeeded",
+            "body": "Payment charged.",
+            "data": {},
+            "created": 1424116529420,
+            "created_date": "2015-02-16T19:55:29.420Z"
+        }
+    ],
+    "_id": "54e247d0bad8080500a8cc9b",
+    "user_id": "524ba2576f9dea020000000f",
+    "version": "v2",
+    "created": 1424115661944,
+    "updated": 1424116529405,
+    "created_date": "2015-02-16T19:41:01.944Z",
+    "updated_date": "2015-02-16T19:55:29.405Z",
+    "locked": false,
+    "metadata": {}
+}
+}

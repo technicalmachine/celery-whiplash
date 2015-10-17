@@ -1,0 +1,181 @@
+{
+    "number": null,
+    "type": null,
+    "order_status": null,
+    "payment_status": null,
+    "fulfillment_status": null,
+    "currency": null,
+    "notes": null,
+    "cancel_url": null,
+    "return_url": null,
+    "shipping_method": null,
+    "deposit": null,
+    "discount": null,
+    "balance": null,
+    "taxable": null,
+    "subtotal": null,
+    "total": null,
+    "paid": null,
+    "refunded": null,
+    "adjustment": null,
+    "shipping": null,
+    "taxes": null,
+    "linetotal": null,
+    "fee": null,
+    "credits": null,
+    "seller": {
+        "_id": null,
+        "email": null,
+        "name": null
+    },
+    "buyer": {
+        "email": null,
+        "phone": null,
+        "first_name": null,
+        "last_name": null,
+        "name": null,
+        "company": null,
+        "notes": null
+    },
+    "shipping_address": {
+        "line1": null,
+        "line2": null,
+        "city": null,
+        "zip": null,
+        "company": null,
+        "phone": null,
+        "first_name": null,
+        "last_name": null,
+        "country": null,
+        "state": null,
+        "name": null
+    },
+    "billing_address": {
+        "first_name": null,
+        "last_name": null,
+        "name": null,
+        "line1": null,
+        "line2": null,
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "phone": null,
+        "company": null
+    },
+    "fulfillment": {
+        "courier": null,
+        "number": null,
+        "created": null,
+        "created_date": null,
+        "serial_numbers": []
+    },
+    "payment_source": {
+        "paypal": {
+            "redirect_url": null,
+            "preapproval_key": null,
+            "ipn": null,
+            "email": null,
+            "seller_email": null,
+            "ending": null,
+            "ending_date": null,
+            "pay_key": null
+        },
+        "failed": null,
+        "card": {
+            "celery_token": null,
+            "name": null,
+            "exp_month": null,
+            "exp_year": null,
+            "last4": null,
+            "country": null,
+            "type": null,
+            "zip": null,
+            "cvc_check": null,
+            "zip_check": null
+        },
+        "affirm: { checkout_token: null, charge_id": null
+    },
+    "airbrite": {
+        "customer_token": null,
+        "card_token": null,
+        "fingerprint": null,
+        "name": null,
+        "exp_month": null,
+        "exp_year": null,
+        "last4": null,
+        "country": null,
+        "type": null
+    },
+    "stripe": {
+        "customer_token": null,
+        "name": null,
+        "exp_month": null,
+        "exp_year": null,
+        "last4": null,
+        "country": null,
+        "type": null
+    },
+    "fees": {
+        "percentage": null,
+        "plan": null
+    },
+    "client_details": {
+        "ip": null,
+        "user_agent": null,
+        "accept_language": null,
+        "referer": null
+    },
+    "charge_balance": {},
+    "charge_deposit": {},
+    "discount_codes": [],
+    "line_items": [],
+    "adjustments": [],
+    "discounts": [],
+    "payments": [
+        {
+            "id": null,
+            "gateway": null,
+            "pay_key": null,
+            "preapproval_key": null,
+            "amount": null,
+            "currency": null,
+            "paid": null,
+            "captured": null,
+            "refunded": null,
+            "amount_refunded": null,
+            "created": null,
+            "created_date": null
+        }
+    ],
+    "fulfillments": [],
+    "history": [
+        {
+            "type": null,
+            "body": null,
+            "created": null,
+            "created_date": null
+        },
+        {
+            "type": null,
+            "body": null,
+            "created": null,
+            "created_date": null
+        },
+        {
+            "type": null,
+            "body": null,
+            "created": null,
+            "created_date": null
+        }
+    ],
+    "_id": null,
+    "user_id": null,
+    "version": null,
+    "created": null,
+    "updated": null,
+    "created_date": null,
+    "updated_date": null,
+    "locked": null,
+    "metadata": {}
+}

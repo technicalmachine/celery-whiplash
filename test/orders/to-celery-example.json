@@ -1,0 +1,22 @@
+{
+    "test_order": {
+        "buyer": {
+            "email": "testemail@test.com",
+            "first_name": "test",
+            "last_name": "name",
+            "phone": "555-555-5555"
+        },
+        "shipping_address": {
+            "first_name": "test",
+            "last_name": "name",
+            "company": "test company",
+            "line1": "test address line 1",
+            "line2": "test address line 2",
+            "city": "test_city",
+            "state": "ca",
+            "zip": "92118",
+            "country": "us",
+            "phone": "555-555-5555"
+        }
+    }
+}

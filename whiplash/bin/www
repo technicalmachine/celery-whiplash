@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+var debug = require('debug')('init');
+var app = require('../app');
+var config = require('./../../config.json');
+var cwGlue = require('./../../lib/celery-to-whiplash');
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});
+
+// The amount of time inbetween celery and whiplash syncing (in milliseconds)
+var interval = 300000; 
+
+// Polls celery and whiplash to synchronize them
+setInterval(function() {
+  cwGlue.initWithKeys(config);
+  cwGlue.synchronizeOrders().then(function(updates) {
+    console.log(timestamp(),'create',updates.create.length,'nocharge',updates.nocharge.length,'fulfill',updates.fulfill.length,'cancel.whiplash',updates.cancel.whiplash.length,'cancel.celery',updates.cancel.celery.length,'refund',updates.refund.length);
+  }).fail(function(err) {
+    console.log(timestamp(),'Failed to sync orders:', err);
+  });
+}, interval);
+
+// Returns the current time in a human readable format
+var timestamp = function() {
+  var d = new Date(); 
+  return "["+d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()+"]";
+}

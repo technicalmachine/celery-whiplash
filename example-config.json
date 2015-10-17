@@ -1,0 +1,21 @@
+{
+  "whiplash" : {
+    "apiKey" : "XXXXXXXXXXXXXX"
+  },
+  "celery" : {
+    "apiKey" : "XXXXXXXXXXXXXX"
+  },
+  "zendesk" : {
+    "username" : "you@youremail.com",
+    "token" : "XXXXXXXX",
+    "remoteUri" : "https://tessel.zendesk.com/api/v2"
+  },
+   "test_info": {
+    "card" : {
+      "number" : "XXXX-XXXX-XXXX-XXXX",
+      "exp_month" : "XX",
+      "exp_year" : "XX",
+      "cvc" : "XXX"
+    }
+  }
+}

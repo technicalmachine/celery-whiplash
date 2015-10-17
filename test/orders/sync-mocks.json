@@ -1,0 +1,344 @@
+{
+    "no_change": {
+        "celery": [
+            {
+                "number": 101592544,
+                "order_status": "open",
+                "payment_status": "unpaid",
+                "fulfillment_status": "unfulfilled"
+            }
+        ],
+        "whiplash": [
+            {
+                "id": 376455,
+                "status": 100,
+                "originator_id": 101592544
+            }
+        ],
+        "updates": {
+            "create": [],
+            "cancel": {
+                "celery": [],
+                "whiplash": []
+            },
+            "fulfill": [],
+            "refund": []
+        }
+    },
+    "create_order": {
+        "celery": [
+            {
+                "number": 101592544,
+                "order_status": "open",
+                "payment_status": "unpaid",
+                "fulfillment_status": "unfulfilled"
+            }
+        ],
+        "whiplash": [],
+        "updates": {
+            "create": [
+                101592544
+            ],
+            "cancel": {
+                "celery": [],
+                "whiplash": []
+            },
+            "fulfill": [],
+            "refund": []
+        }
+    },
+    "cancel_order": {
+        "celery": [
+            {
+                "number": 101592544,
+                "order_status": "cancelled",
+                "payment_status": "unpaid",
+                "fulfillment_status": "unfulfilled"
+            }
+        ],
+        "whiplash": [
+            {
+                "id": 376455,
+                "status": 100,
+                "originator_id": 101592544
+            }
+        ],
+        "updates": {
+            "create": [],
+            "cancel": {
+                "whiplash": [
+                    101592544
+                ],
+                "celery": []
+            },
+            "fulfill": [],
+            "refund": []
+        }
+    },
+    "alt_cancel_order": {
+        "celery": [
+            {
+                "number": 101592544,
+                "order_status": "open",
+                "payment_status": "paid",
+                "fulfillment_status": "unfulfilled"
+            }
+        ],
+        "whiplash": [
+            {
+                "id": 376455,
+                "status": 40,
+                "originator_id": 101592544
+            }
+        ],
+        "updates": {
+            "create": [],
+            "cancel": {
+                "whiplash": [],
+                "celery": [
+                    101592544
+                ]
+            },
+            "fulfill": [],
+            "refund": []
+        }
+    },
+    "refund_order": {
+        "celery": [
+            {
+                "number": 101592544,
+                "order_status": "cancelled",
+                "payment_status": "paid",
+                "fulfillment_status": "unfulfilled"
+            }
+        ],
+        "whiplash": [
+            {
+                "id": 376455,
+                "status": 100,
+                "originator_id": 101592544
+            }
+        ],
+        "updates": {
+            "create": [],
+            "cancel": {
+                "whiplash": [
+                    101592544
+                ],
+                "celery": []
+            },
+            "fulfill": [],
+            "refund": [
+                101592544
+            ]
+        }
+    },
+    "refunded_order": {
+        "celery": [
+            {
+                "number": 101592544,
+                "order_status": "open",
+                "payment_status": "refunded",
+                "fulfillment_status": "unfulfilled"
+            }
+        ],
+        "whiplash": [
+            {
+                "id": 376455,
+                "status": 100,
+                "originator_id": 101592544
+            }
+        ],
+        "updates": {
+            "create": [],
+            "cancel": {
+                "celery": [
+                    101592544
+                ],
+                "whiplash": [
+                    101592544
+                ]
+            },
+            "fulfill": [],
+            "refund": []
+        }
+    },
+    "fulfill_order": {
+        "celery": [
+            {
+                "number": 101592544,
+                "order_status": "open",
+                "payment_status": "paid",
+                "fulfillment_status": "unfulfilled"
+            }
+        ],
+        "whiplash": [
+            {
+                "id": 376455,
+                "status": 300,
+                "originator_id": 101592544
+            }
+        ],
+        "updates": {
+            "create": [],
+            "cancel": {
+                "celery": [],
+                "whiplash": []
+            },
+            "fulfill": [
+                101592544
+            ],
+            "refund": []
+        }
+    },
+    "complete_order": {
+        "celery": [
+            {
+                "number": 101592544,
+                "order_status": "open",
+                "payment_status": "paid",
+                "fulfillment_status": "fulfilled"
+            }
+        ],
+        "whiplash": [
+            {
+                "id": 376455,
+                "status": 300,
+                "originator_id": 101592544
+            }
+        ],
+        "updates": {
+            "create": [],
+            "cancel": {
+                "celery": [],
+                "whiplash": []
+            },
+            "fulfill": [],
+            "refund": []
+        }
+    },
+    "combination_order_1": {
+        "celery": [
+            {
+                "number": "101629969",
+                "order_status": "open",
+                "payment_status": "unpaid",
+                "fulfillment_status": "unfulfilled"
+            },
+            {
+                "number": "101629834",
+                "order_status": "open",
+                "payment_status": "unpaid",
+                "fulfillment_status": "unfulfilled"
+            },
+            {
+                "number": "101629623",
+                "order_status": "open",
+                "payment_status": "unpaid",
+                "fulfillment_status": "unfulfilled"
+            },
+            {
+                "number": "101629618",
+                "order_status": "open",
+                "payment_status": "unpaid",
+                "fulfillment_status": "unfulfilled"
+            },
+            {
+                "number": "101629300",
+                "order_status": "open",
+                "payment_status": "unpaid",
+                "fulfillment_status": "unfulfilled"
+            },
+            {
+                "number": "101629188",
+                "order_status": "open",
+                "payment_status": "paid",
+                "fulfillment_status": "unfulfilled"
+            }
+        ],
+        "whiplash": [
+            {
+                "id": 333276,
+                "status": 300,
+                "originator_id": "101629188"
+            },
+            {
+                "id": 333272,
+                "status": 40,
+                "originator_id": "1416277040288"
+            },
+            {
+                "id": 333258,
+                "status": 40,
+                "originator_id": "1416276553254"
+            },
+            {
+                "id": 333252,
+                "status": 40,
+                "originator_id": "1416276500255"
+            },
+            {
+                "id": 333250,
+                "status": 40,
+                "originator_id": "1416276409240"
+            },
+            {
+                "id": 333244,
+                "status": 40,
+                "originator_id": "1416275813972"
+            },
+            {
+                "id": 333235,
+                "status": 40,
+                "originator_id": null
+            },
+            {
+                "id": 333211,
+                "status": 40,
+                "originator_id": "test_orig_id"
+            },
+            {
+                "id": 333169,
+                "status": 90,
+                "originator_id": "321393"
+            },
+            {
+                "id": 333146,
+                "status": 40,
+                "originator_id": "101625656"
+            },
+            {
+                "id": 332519,
+                "status": 300,
+                "originator_id": null
+            },
+            {
+                "id": 332584,
+                "status": 95,
+                "originator_id": null
+            },
+            {
+                "id": 332580,
+                "status": 95,
+                "originator_id": null
+            }
+        ],
+        "updates": {
+            "create": [
+                101629969,
+                101629834,
+                101629623,
+                101629618,
+                101629300
+            ],
+            "cancel": {
+                "celery": [],
+                "whiplash": []
+            },
+            "fulfill": [
+                101629188
+            ],
+            "refund": []
+        }
+    }
+}
