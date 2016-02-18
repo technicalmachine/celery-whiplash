@@ -143,15 +143,15 @@ var cancel = function(id) {
 
 var cancel_all = function() {
   router.whiplash.fetchOrders(null, 'processing', null)
-  .then((orders) => {
+  .then(function(orders) {
     console.log('items len', orders.length);
-    orders.forEach((order) => {
+    orders.forEach(function(order) {
       router.whiplash.cancelOrder(order)
       .then(() => console.log('success!'))
       .catch((err) => console.err('failure!', err));
     })
   })
-  .catch((err) => {
+  .catch(function(err) {
     console.log('error', err);
   })
 }
