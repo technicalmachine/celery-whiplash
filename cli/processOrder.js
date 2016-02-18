@@ -141,6 +141,21 @@ var cancel = function(id) {
   });
 }
 
+var cancel_all = function() {
+  router.whiplash.fetchOrders(null, 'processing', null)
+  .then((orders) => {
+    console.log('items len', orders.length);
+    orders.forEach((order) => {
+      router.whiplash.cancelOrder(order)
+      .then(() => console.log('success!'))
+      .catch((err) => console.err('failure!', err));
+    })
+  })
+  .catch((err) => {
+    console.log('error', err);
+  })
+}
+
 // Sync orders between celery and whiplash
 var sync = function(dry, list) {
   if (dry) {
@@ -204,6 +219,9 @@ switch(process.argv[2]) {
     break;
   case 'cancel':
     cancel(process.argv[3]);
+    break;
+  case 'cancel-all-whiplash':
+    cancel_all();
     break;
   case 'sync':
     sync(process.argv[3], process.argv[4]);
