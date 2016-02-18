@@ -141,27 +141,12 @@ var cancel = function(id) {
   });
 }
 
-var cancel_all = function() {
-  router.whiplash.fetchOrders(null, 'processing', null)
-  .then(function(orders) {
-    console.log('items len', orders.length);
-    orders.forEach(function(order) {
-      router.whiplash.cancelOrder(order)
-      .then(function() { console.log('success!');})
-      .catch(function(err) { console.err('failure!', err)});
-    })
-  })
-  .catch(function(err) {
-    console.log('error', err);
-  })
-}
-
 // Sync orders between celery and whiplash
 var sync = function(dry, list) {
   if (dry) {
-    router.celery.fetchOrders('open','paid','unfulfilled,fulfilled,pending,processing,failed,held',router.celery.sinceOrder).then(function(celeryOrders) {
-      router.whiplash.fetchOrders(null,null,router.whiplash.sinceOrder).then(function(whiplashOrders) {
-        router.synchronize(celeryOrders,whiplashOrders).then(function(updates) {
+    return router.celery.fetchOrders('open','paid','unfulfilled,fulfilled,pending,processing,failed,held',router.celery.sinceOrder).then(function(celeryOrders) {
+      return router.whiplash.fetchAllOrders().then(function(whiplashOrders) {
+        return router.synchronize(celeryOrders,whiplashOrders).then(function(updates) {
           console.log(timestamp(),'create',updates.create.length,'nocharge',updates.nocharge.length,'fulfill',updates.fulfill.length,'cancel.whiplash',updates.cancel.whiplash.length,'cancel.celery',updates.cancel.celery.length,'refund',updates.refund.length);
           if (list) {
             if (updates.create.length) { console.log('Create in whiplash ('+updates.create.length+'):'); }
@@ -177,11 +162,12 @@ var sync = function(dry, list) {
             if (updates.refund.length) { console.log('Orders to cancel in celery ('+updates.refund.length+'):'); }
             for (var i in updates.refund) { console.log(updates.refund[i].number); }
           }
-        }).fail(function(err) {
-          console.log(err);
         });
       });
-    });
+    })
+    .catch(function(err) {
+      console.log('synch failed...', err);
+    })
   }
   else {
     router.synchronizeOrders().then(function() {
@@ -219,9 +205,6 @@ switch(process.argv[2]) {
     break;
   case 'cancel':
     cancel(process.argv[3]);
-    break;
-  case 'cancel-all-whiplash':
-    cancel_all();
     break;
   case 'sync':
     sync(process.argv[3], process.argv[4]);
