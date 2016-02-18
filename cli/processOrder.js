@@ -147,8 +147,8 @@ var cancel_all = function() {
     console.log('items len', orders.length);
     orders.forEach(function(order) {
       router.whiplash.cancelOrder(order)
-      .then(() => console.log('success!'))
-      .catch((err) => console.err('failure!', err));
+      .then(function() { console.log('success!');})
+      .catch(function(err) { console.err('failure!', err)});
     })
   })
   .catch(function(err) {
