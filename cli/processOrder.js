@@ -20,15 +20,15 @@ var printUsage = function() {
     console.warn('sync [--dryrun]: sync orders between Celery and Whiplash. Dryrun lists changed to be made without actually making them');
 }
 
-// List the orders given the 
+// List the orders given the
 var list = function(os, ps, fs) {
   var order_status;
   var payment_status;
-  var fulfillment_status; 
+  var fulfillment_status;
   if (os == 'ouu') {
     order_status = 'open';
     payment_status = 'unpaid';
-    fulfillment_status = 'unfulfilled'; 
+    fulfillment_status = 'unfulfilled';
   }
   else if (os) {
     switch(os) {
@@ -144,8 +144,8 @@ var cancel = function(id) {
 // Sync orders between celery and whiplash
 var sync = function(dry, list) {
   if (dry) {
-    router.celery.fetchOrders(null,null,null,router.celery.sinceOrder).then(function(celeryOrders) {
-      router.whiplash.fetchOrders(100,null,router.whiplash.sinceOrder).then(function(whiplashOrders) {
+    router.celery.fetchOrders('open','paid','unfulfilled,fulfilled,pending,processing,failed,held',router.celery.sinceOrder).then(function(celeryOrders) {
+      router.whiplash.fetchOrders(null,null,router.whiplash.sinceOrder).then(function(whiplashOrders) {
         router.synchronize(celeryOrders,whiplashOrders).then(function(updates) {
           console.log(timestamp(),'create',updates.create.length,'nocharge',updates.nocharge.length,'fulfill',updates.fulfill.length,'cancel.whiplash',updates.cancel.whiplash.length,'cancel.celery',updates.cancel.celery.length,'refund',updates.refund.length);
           if (list) {
@@ -179,7 +179,7 @@ var sync = function(dry, list) {
 
 // Returns the current time in a human readable format
 var timestamp = function() {
-  var d = new Date(); 
+  var d = new Date();
   return "["+d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()+"]";
 }
 
@@ -209,4 +209,3 @@ switch(process.argv[2]) {
     sync(process.argv[3], process.argv[4]);
     break;
 }
-
