@@ -1,5 +1,7 @@
 var router = require('../');
 var config = require('./../config.json');
+var csvParse = require('csv-parse');
+var fs = require('fs');
 var async = require('async');
 
 router.initWithKeys(config);
@@ -184,6 +186,58 @@ var timestamp = function() {
   return "["+d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()+"]";
 }
 
+// Marks orders fulfilled from spreadsheet
+// 1st column must be order number
+// 2nd column must be
+var fulfill = function(csvFileName) {
+  // Read in the csv file indicated
+  fs.readFile(csvFileName, (err, data) => {
+    if (err) {
+      throw err;
+    }
+    else {
+      // Parse the CSV file into an array
+      csvParse(data, (err, parsedOrders) => {
+        if (err) {
+          throw err;
+        }
+        else {
+          // Remove the header row
+          parsedOrders.splice(0, 1);
+          // Extract out fulfillment info
+          async.eachSeries(parsedOrders, (order, callback) => {
+            var orderNum = order[0];
+            var trackingNum = order[1];
+            var courier = order[2];
+            if (!orderNum || !trackingNum || !courier) {
+              throw new Error(`Spreadsheet not formated properly.
+                You must have Order Number in the first column
+                Tracking Number in the second column and
+                Courier name in the third column`);
+            }
+            // Post to Celery
+            router.celery.fulfillOrder(orderNum, courier, trackingNum)
+            .then(() => {
+              callback();
+            })
+            .catch(() => {
+              callback();
+            });
+          }, (err) => {
+            if (err) {
+              throw err;
+            }
+            else {
+              console.log("Finished!");
+              return;
+            }
+          })
+        }
+      });
+    }
+  });
+}
+
 // If there's no arguments provided print usage
 if (!process.argv[2]) { printUsage(); return; }
 
@@ -209,4 +263,8 @@ switch(process.argv[2]) {
   case 'sync':
     sync(process.argv[3], process.argv[4]);
     break;
+  // Parse a CSV of fulfilmment info and mark as fulfilled
+  case 'fulfill-csv':
+    // CSV filename is third arg (eg node cli/processOrder.js fulfill-csv ~/tracking.csv);
+    fulfill(process.argv[3]);
 }
